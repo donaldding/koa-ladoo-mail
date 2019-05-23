@@ -2,7 +2,11 @@ module.exports = {
     apps: [{
       name: "app",
       script: "index.js",
-      node_args: 'node -r dotenv/config index.js'
+      node_args: 'node -r dotenv/config index.js',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '1G',
     }],
     deploy: {
       // "production" is the environment name
@@ -10,9 +14,6 @@ module.exports = {
         user: "root",
         // SSH host
         host: ["47.112.137.116"],
-        // SSH options with no command-line flag, see 'man ssh' 
-        // can be either a single string or an array of strings
-        ssh_options: "StrictHostKeyChecking=no",
         // GIT remote/branch
         ref: "origin/master",
         // GIT remote
