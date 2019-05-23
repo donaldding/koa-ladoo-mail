@@ -1,7 +1,8 @@
 module.exports = {
     apps: [{
       name: "app",
-      script: "index.js"
+      script: "index.js",
+      node_args: 'node -r dotenv/config index.js'
     }],
     deploy: {
       // "production" is the environment name
