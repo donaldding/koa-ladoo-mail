@@ -18,6 +18,8 @@ module.exports = {
         repo: "git@github.com:donaldding/koa-ladoo-mail.git",
         // path in the server
         path: "/var/www/koa-mail-serivce",
+        "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"    // 部署后执行的命令，本案例：先安装依赖再启动
+
       }
     }
   }
