@@ -6,7 +6,7 @@ class Webhook {
     const item = event_data['user-variables']['email_id']
     if (item === undefined) {
       ctx.body = 'error'
-      ctx.response.status = 500
+      ctx.response.status = 406
       return
     }
     const email_id = JSON.parse(item)['email_id']
@@ -15,7 +15,7 @@ class Webhook {
     })
     if (emails.length < 1) {
       ctx.body = 'error'
-      ctx.response.status = 500
+      ctx.response.status = 406
       return
     }
     const email = emails[0]
