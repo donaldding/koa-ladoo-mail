@@ -2,7 +2,7 @@ module.exports = {
     apps: [{
       name: "app",
       script: "index.js",
-      node_args: 'dotenv/config',
+      node_args: '-r dotenv/config',
       instances: 1,
       autorestart: true,
       watch: false,
