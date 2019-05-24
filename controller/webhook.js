@@ -86,7 +86,7 @@ class Webhook {
         params = { ...params, ...client_info}
       }
 
-      await knex('email_client_infos').insert({
+      await knex('event_client_infos').insert({
         email_event_id: email_event[0],
         created_at: new Date().toUTCString(),
         updated_at: new Date().toUTCString(),
