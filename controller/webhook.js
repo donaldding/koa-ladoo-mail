@@ -92,7 +92,6 @@ class Webhook {
         updated_at: new Date().toUTCString(),
         ...params
       })
-    end
     }
     ctx.response.status = 200
     ctx.body = 'success'
